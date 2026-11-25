@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ARTICLE_TITLE}} - 梦幻甬城官网</title>
+    <meta name="keywords" content="{{ARTICLE_KEYWORDS}}">
+    <meta name="description" content="{{ARTICLE_DESCRIPTION}}">
+    <link rel="canonical" href="https://www.cwjdgw.cn/{{ARTICLE_URL}}">
+    <meta property="og:title" content="{{ARTICLE_TITLE}} - 梦幻甬城官网">
+    <meta property="og:description" content="{{ARTICLE_DESCRIPTION}}">
+    <meta property="og:image" content="{{ARTICLE_IMAGE}}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.cwjdgw.cn/{{ARTICLE_URL}}">
+    <meta property="og:site_name" content="梦幻甬城官网">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ARTICLE_TITLE}} - 梦幻甬城官网">
+    <meta name="twitter:description" content="{{ARTICLE_DESCRIPTION}}">
+    <link rel="icon" type="image/png" href="../img/icons/icon.png">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": "{{ARTICLE_TITLE}}",
+        "description": "{{ARTICLE_DESCRIPTION}}",
+        "image": "{{ARTICLE_IMAGE}}",
+        "datePublished": "{{ARTICLE_DATE}}",
+        "author": {
+            "@type": "Organization",
+            "name": "{{ARTICLE_AUTHOR}}"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "梦幻甬城官网",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.cwjdgw.cn/img/icons/icon.webp"
+            }
+        }
+    }
+    </script>
+
+        <meta property="og:locale" content="zh_CN">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:image" content="{{ARTICLE_IMAGE}}">
+    <meta name="theme-color" content="#FF5C5C">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css?v=20261125">
+    <link rel="stylesheet" href="../assets/libs/font-awesome/css/all.min.css?v=20261125">
+    <link rel="stylesheet" href="../css/main.css?v=20261125">
+</head>
+<body>
+
+    <!-- Toast 通知 -->
+    <div id="pm-toast" class="pm-toast" role="status" aria-live="polite" aria-atomic="true">
+        <i class="fas fa-check-circle me-2" aria-hidden="true"></i>
+        <span>已复制到剪贴板</span>
+    </div>
+
+    <!-- 图片查看器 Modal -->
+    <div id="pm-image-modal" class="pm-modal" onclick="closeImageModal()" role="dialog" aria-modal="true" aria-label="图片查看器">
+        <button class="pm-modal-close" onclick="closeImageModal()" aria-label="关闭图片查看器">
+            <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+        <img id="pm-modal-image" src="" alt="查看大图" width="800" height="600">
+    </div>
+
+    <!-- 导航栏 -->
+    <header id="pm-header" class="pm-header">
+        <div class="pm-container">
+            <div class="d-flex justify-content-between align-items-center py-3">
+                <a href="../index.html" class="d-flex align-items-center gap-2 text-decoration-none">
+                    <img src="../img/icons/icon.webp" alt="梦幻甬城游戏图标" class="rounded-3 shadow-sm" width="40" height="40" srcset="img/icons/icon-192.webp 192w, img/icons/icon-96.webp 96w" sizes="(max-width: 768px) 100vw, 420px" decoding="async" loading="eager">
+                    <div>
+                        <span class="fs-4 fw-bold" style="color: var(--pm-primary);">梦幻甬城</span>
+                        <span class="badge ms-1" style="background: linear-gradient(135deg, var(--pm-accent), #f59e0b);">官网</span>
+                    </div>
+                </a>
+
+                <nav class="d-none d-lg-flex align-items-center gap-4">
+                    <a href="../index.html" class="pm-nav-link">首页</a>
+                    <a href="../features.html" class="pm-nav-link">游戏特色</a>
+                    <a href="../guide.html" class="pm-nav-link">游戏攻略</a>
+                    <a href="../codes.html" class="pm-nav-link">兑换码</a>
+                    <a href="../contact.html" class="pm-nav-link">联系我们</a>
+                    <a href="../articles.html" class="pm-nav-link active">攻略文章</a>
+                </nav>
+
+                <div class="d-flex align-items-center gap-2">
+                    <a href="https://p.3633yx.com/2eYrQn" class="pm-btn-primary d-none d-md-flex" style="padding: 0.6rem 1.5rem; font-size: 1rem;">
+                        <i class="fas fa-download me-2" aria-hidden="true"></i>
+                        立即下载
+                    </a>
+                    <button class="btn btn-link d-lg-none p-2" id="pm-menu-toggle" aria-label="打开菜单" aria-expanded="false" aria-controls="pm-mobile-menu" style="color: var(--pm-dark); font-size: 1.5rem;">
+                        <i class="fas fa-bars" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="pm-mobile-menu" class="pm-mobile-menu d-lg-none border-top" style="background: white;">
+            <div class="pm-container py-3 d-flex flex-column gap-2">
+                <a href="../index.html" class="d-flex align-items-center gap-2 py-2 text-decoration-none" style="color: var(--pm-dark); border-top: 1px solid #f1f5f9;">
+                    <i class="fas fa-home" style="width: 24px; text-align: center; color: var(--pm-primary);"></i>首页
+                </a>
+                <a href="../features.html" class="d-flex align-items-center gap-2 py-2 text-decoration-none" style="color: var(--pm-dark); border-top: 1px solid #f1f5f9;">
+                    <i class="fas fa-star" style="width: 24px; text-align: center; color: var(--pm-primary);"></i>游戏特色
+                </a>
+                <a href="../guide.html" class="d-flex align-items-center gap-2 py-2 text-decoration-none" style="color: var(--pm-dark); border-top: 1px solid #f1f5f9;">
+                    <i class="fas fa-book" style="width: 24px; text-align: center; color: var(--pm-primary);"></i>游戏攻略
+                </a>
+                <a href="../codes.html" class="d-flex align-items-center gap-2 py-2 text-decoration-none" style="color: var(--pm-dark); border-top: 1px solid #f1f5f9;">
+                    <i class="fas fa-gift" style="width: 24px; text-align: center; color: var(--pm-primary);"></i>兑换码
+                </a>
+                <a href="../contact.html" class="d-flex align-items-center gap-2 py-2 text-decoration-none" style="color: var(--pm-dark); border-top: 1px solid #f1f5f9;">
+                    <i class="fas fa-headset" style="width: 24px; text-align: center; color: var(--pm-primary);"></i>联系我们
+                </a>
+                <a href="../articles.html" class="d-flex align-items-center gap-2 py-2 text-decoration-none fw-bold" style="color: var(--pm-primary); border-top: 1px solid #f1f5f9;">
+                    <i class="fas fa-newspaper" style="width: 24px; text-align: center;"></i>攻略文章
+                </a>
+                <a href="https://p.3633yx.com/2eYrQn" class="pm-btn-primary justify-content-center mt-2" style="font-size: 1rem; padding: 0.75rem;">
+                    <i class="fas fa-download me-2"></i>立即下载游戏
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: 72px;">
+        <!-- 文章头部Banner -->
+        <section class="position-relative" style="height: 50vh; min-height: 300px;">
+            <img src="{{ARTICLE_BANNER}}" alt="{{ARTICLE_TITLE}}" class="w-100 h-100" style="object-fit: cover;" decoding="async" loading="lazy">
+            <div class="position-absolute" style="inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.7));"></div>
+            <div class="position-absolute bottom-0 start-0 end-0 p-4 p-md-5 text-center">
+                <h1 class="text-white fw-bold mb-3" style="font-size: clamp(1.5rem, 4vw, 2.5rem); text-shadow: 2px 4px 8px rgba(0,0,0,0.7);">
+                    {{ARTICLE_TITLE}}
+                </h1>
+                <p class="text-white-50 mb-0" style="font-size: 1.125rem;">
+                    {{ARTICLE_SUBTITLE}}
+                </p>
+            </div>
+        </section>
+
+        <!-- 文章内容 -->
+        <section class="py-5 bg-white">
+            <div class="pm-container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <!-- 文章元信息 -->
+                        <div class="text-center mb-5 pb-4 border-bottom">
+                            <div class="d-flex flex-wrap justify-content-center align-items-center gap-3 text-secondary mb-3" style="font-size: 0.875rem;">
+                                <span><i class="far fa-calendar me-1"></i>{{ARTICLE_DATE}}</span>
+                                <span><i class="far fa-user me-1"></i>{{ARTICLE_AUTHOR}}</span>
+                                <span class="pm-tag pm-tag-primary">{{ARTICLE_CATEGORY}}</span>
+                            </div>
+                            <div style="width: 60px; height: 4px; background: var(--pm-primary); margin: 0 auto; border-radius: 9999px;"></div>
+                        </div>
+
+                        <!-- 文章正文 -->
+                        <article class="pm-article-content">
+{{ARTICLE_CONTENT}}
+                        </article>
+
+                        <!-- 分享按钮 -->
+                        <div class="mt-5 pt-4 border-top">
+                            <h4 class="h6 fw-bold mb-3 text-center">分享这篇文章</h4>
+                            <div class="d-flex justify-content-center gap-3">
+                                <button onclick="shareToWeibo()" class="btn btn-outline-danger rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                                    <i class="fab fa-weibo"></i>
+                                </button>
+                                <button onclick="shareToWechat()" class="btn btn-outline-success rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                                    <i class="fab fa-weixin"></i>
+                                </button>
+                                <button onclick="copyLink()" class="btn btn-outline-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 相关推荐 -->
+        <section class="py-5" style="background: linear-gradient(180deg, var(--pm-light), white);">
+            <div class="pm-container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold mb-3" style="font-size: clamp(1.5rem, 3vw, 2rem);">相关推荐</h2>
+                    <div style="width: 60px; height: 4px; background: var(--pm-primary); margin: 0 auto; border-radius: 9999px;"></div>
+                </div>
+
+                <div class="row g-4 justify-content-center" id="related-articles">
+                    <!-- 由JS动态加载 -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="pm-footer">
+        <div class="pm-container">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-6">
+                    <div class="d-flex align-items-center mb-4">
+                        <img src="../img/icons/icon.webp" alt="梦幻甬城游戏图标" class="rounded-3 me-3 shadow-sm" width="56" height="56" srcset="img/icons/icon-192.webp 192w, img/icons/icon-96.webp 96w" sizes="(max-width: 768px) 100vw, 420px" decoding="async" loading="eager">
+                        <div>
+                            <h2 class="h4 fw-bold mb-1">梦幻甬城</h2>
+                            <span class="badge" style="background: linear-gradient(135deg, var(--pm-accent), #f59e0b);">官网</span>
+                        </div>
+                    </div>
+                    <p class="text-white-50 mb-4" style="line-height: 1.8;">
+                        梦幻甬城是一款二次元回合冒险卡牌手游：野外草丛探险捕捉神兽精灵，Mega进化解锁全新技能，神兽与学习机自由交易，八大道馆与四大天王等你来战。
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="d-flex align-items-center justify-content-center rounded-circle text-decoration-none" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1);" title="微博">
+                            <i class="fab fa-weibo"></i>
+                        </a>
+                        <a href="#" class="d-flex align-items-center justify-content-center rounded-circle text-decoration-none" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1);" title="微信">
+                            <i class="fab fa-weixin"></i>
+                        </a>
+                        <a href="#" class="d-flex align-items-center justify-content-center rounded-circle text-decoration-none" style="width: 40px; height: 40px; background: rgba(255,255,255,0.1);" title="QQ群">
+                            <i class="fab fa-qq"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <h3 class="h6 fw-bold mb-4" style="color: var(--pm-accent);">
+                        <i class="fas fa-link me-2"></i>快速链接
+                    </h3>
+                    <ul class="list-unstyled gap-2 d-flex flex-column">
+                        <li><a href="../index.html" class="text-decoration-none">首页</a></li>
+                        <li><a href="../features.html" class="text-decoration-none">游戏特色</a></li>
+                        <li><a href="../guide.html" class="text-decoration-none">游戏攻略</a></li>
+                        <li><a href="../codes.html" class="text-decoration-none">兑换码</a></li>
+                        <li><a href="../contact.html" class="text-decoration-none">联系我们</a></li>
+                        <li><a href="../articles.html" class="text-decoration-none">攻略文章</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <h3 class="h6 fw-bold mb-4" style="color: var(--pm-accent);">
+                        <i class="fas fa-balance-scale me-2"></i>法律信息
+                    </h3>
+                    <ul class="list-unstyled gap-2 d-flex flex-column mb-4">
+                        <li><a href="../privacy.html" class="text-decoration-none">隐私政策</a></li>
+                        <li><a href="../terms.html" class="text-decoration-none">用户协议</a></li>
+                        <li><a href="../sitemap.xml" class="text-decoration-none">网站地图</a></li>
+                    </ul>
+                    <h3 class="h6 fw-bold mb-3" style="color: var(--pm-accent);">
+                        <i class="fas fa-download me-2"></i>资源下载
+                    </h3>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="https://p.3633yx.com/2eYrQn" class="pm-btn-primary text-decoration-none" style="font-size: 0.875rem; padding: 0.5rem 1rem; background: linear-gradient(135deg, #22c55e, #16a34a);">
+                            <i class="fab fa-android me-2"></i>安卓下载
+                        </a>
+                        <a href="https://p.3633yx.com/Landing/6ZnaYf.html" class="pm-btn-primary text-decoration-none" style="font-size: 0.875rem; padding: 0.5rem 1rem; background: linear-gradient(135deg, #3b82f6, #2563eb);">
+                            <i class="fab fa-apple me-2"></i>苹果下载
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-top border-white-10 pt-4">
+                <div class="p-4 rounded-3 mb-4" style="background: rgba(255,255,255,0.05);">
+                    <p class="text-white-50 text-center mb-2" style="font-size: 0.875rem;">
+                        <i class="fas fa-exclamation-triangle me-2" style="color: var(--pm-accent);"></i>
+                        抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。
+                    </p>
+                    <p class="text-white-50 text-center mb-0" style="font-size: 0.875rem;">
+                        适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。
+                    </p>
+                </div>
+                <p class="text-white-50 text-center mb-0" style="font-size: 0.75rem;">
+                    &copy; 2026 梦幻甬城官网 版权所有
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="pm-back-to-top" class="pm-back-to-top" onclick="scrollToTop()" aria-label="返回顶部">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- 联系客服悬浮按钮 -->
+    <a href="../contact.html" class="pm-float-contact text-decoration-none">
+        <i class="fas fa-headphones fs-5" aria-hidden="true"></i>
+        <span>联系客服</span>
+    </a>
+
+    <!-- 文章数据 -->
+    <script>
+        window.ARTICLES_DATA = [
+            {
+                title: "梦幻甬城野外捕捉全攻略：精灵球、状态与出没规律",
+                excerpt: "梦幻甬城春日祭典限时开启！2026年3月13日-3月20日，闪光精灵出现率提升300%，完成春日任务链兑换樱花限定道具与限定闪光樱花精灵。",
+                date: "2026-03-13",
+                author: "梦幻甬城官方",
+                category: "活动",
+                image: "../img/screenshots/hero-banner.webp",
+                url: "article-20260313.html"
+            }
+        ];
+    </script>
+
+    <script src="../js/main.js?v=20261125"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 加载相关文章（排除当前文章）
+            var currentUrl = window.location.pathname.split('/').pop();
+            var articles = window.ARTICLES_DATA || [];
+            var related = articles.filter(function(a) {
+                return a.url !== currentUrl;
+            }).slice(0, 3);
+
+            var container = document.getElementById('related-articles');
+            if (related.length === 0) {
+                container.innerHTML = '<div class="col-12 text-center py-4"><p class="text-secondary">暂无相关文章</p></div>';
+            } else {
+                var html = '';
+                related.forEach(function(article) {
+                    html += '<div class="col-md-4">';
+                    html += '<a href="' + article.url + '" class="pm-article-card text-decoration-none d-block h-100">';
+                    html += '<div class="overflow-hidden">';
+                    html += '<img src="' + article.image + '" alt="' + article.title + '" class="pm-article-img" decoding="async" loading="lazy">';
+                    html += '</div>';
+                    html += '<div class="pm-article-body">';
+                    html += '<span class="pm-tag pm-tag-primary mb-2">' + article.category + '</span>';
+                    html += '<h3 class="pm-article-title">' + article.title + '</h3>';
+                    html += '<p class="pm-article-excerpt">' + article.excerpt + '</p>';
+                    html += '<div class="pm-article-meta">';
+                    html += '<span><i class="far fa-calendar me-1"></i>' + article.date + '</span>';
+                    html += '</div>';
+                    html += '</div>';
+                    html += '</a>';
+                    html += '</div>';
+                });
+                container.innerHTML = html;
+            }
+        });
+
+        function shareToWeibo() {
+            var url = encodeURIComponent(window.location.href);
+            var title = encodeURIComponent(document.title);
+            window.open('https://service.weibo.com/share/share.php?url=' + url + '&title=' + title, '_blank');
+        }
+
+        function shareToWechat() {
+            showToast('请使用微信扫一扫分享');
+        }
+
+        function copyLink() {
+            copyCode(window.location.href);
+        }
+    </script>
+</body>
+</html>

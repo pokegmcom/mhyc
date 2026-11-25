@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# 屏蔽无价值资源
+Disallow: /article-template.html
+Disallow: /articles/article-template.html
+
+Sitemap: https://www.cwjdgw.cn/sitemap.xml
